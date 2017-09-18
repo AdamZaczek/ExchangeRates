@@ -4,12 +4,13 @@ import { fetchCurrencies } from './actions/fetchCurrencies';
 
 class Currency extends Component {
   render() {
-    const { ask, bid, code } = this.props.currency;
+    const { currency, ask, bid, code } = this.props.currency;
     return (
       <tr>
-        <td>Ask: {ask}</td>
-        <td>Bid: {bid}</td>
-        <td>code: {code}</td>
+        <td>{currency}</td>
+        <td>{ask}</td>
+        <td>{bid}</td>
+        <td>{code}</td>
       </tr>
     )
   }
@@ -19,10 +20,15 @@ const ListCurrencies = (props) => {
   const mapCurrencies = props.currencies.map(currency => <Currency key={currency.code} currency={currency} />)
   return (
     <table>
-      <th>ASK</th>
-      <th>BID</th>
-      <th>CODE</th>
-      {mapCurrencies}
+      <tbody>
+        <tr>
+          <th>Currency</th>
+          <th>Ask</th>
+          <th>Bid</th>
+          <th>Code</th>
+        </tr>
+        {mapCurrencies}
+      </tbody>
     </table>
   );
 }
@@ -34,6 +40,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="App">
         <div className="App-header">
