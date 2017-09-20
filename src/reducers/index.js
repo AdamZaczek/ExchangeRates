@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import currenciesReducer from './currenciesReducer';
+import fetchCurrencies from './fetchCurrencies';
+import manageCurrencies from './manageCurrencies';
 
 export default combineReducers({
-  currenciesReducer,
+  fetchCurrencies,
+  manageCurrencies,
 });

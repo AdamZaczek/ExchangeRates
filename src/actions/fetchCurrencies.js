@@ -1,6 +1,6 @@
 import { FETCH_CURRENCIES } from '../constants/actionTypes';
 
-function fetcCurrenciesSuccess(currencies) {
+const fetcCurrenciesSuccess = currencies => {
   return {
     type: FETCH_CURRENCIES,
     currencies: currencies[0].rates,
