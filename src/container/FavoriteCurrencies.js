@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Currencies from '../presentational/Currencies';
-import { addCurrency} from '../actions/manageCurrencies';
+import { addCurrency, removeCurrency } from '../actions/manageCurrencies';
 
-class ListCurrencies extends Component {
+class FavoriteCurrencies extends Component {
   addCurrency = currency => this.props.addCurrency(currency);
 
   render() {
     return (
       <Currencies
         currencies={this.props.currencies}
-        addCurrency={this.addCurrency}
+        removeCurrency={this.addCurrency}
       />
     );
   }
 }
 
+const mapStateToProps = state => ({
+  currencies: state.manageCurrencies.currencies,
+});
+
 const mapDispatchToProps = dispatch => ({
-  addCurrency: currency => dispatch(addCurrency(currency)),
+  removeCurrency: currency => dispatch(removeCurrency(currency)),
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
-)(ListCurrencies);
+)(FavoriteCurrencies);

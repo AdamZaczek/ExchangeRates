@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ListCurrencies from './ListCurrencies';
+import FavoriteCurrencies from './FavoriteCurrencies';
 import { fetchCurrencies } from '../actions/fetchCurrencies';
 
 const Button = props => (
@@ -13,10 +14,23 @@ class Init extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
-        <h2>Choose yout favorite currencies</h2>
-        <ListCurrencies currencies={this.props.currencies} />
+        {
+          this.props.favoriteCurrencies.length > 0 &&
+          <div>
+            <h2>So Far You have chosen:</h2>
+            <FavoriteCurrencies currencies={this.props.currencies} />
+            <h2>Remaining currencies:</h2>
+          </div>
+        }
+        {
+          this.props.currencies.length ?
+          <ListCurrencies currencies={this.props.currencies} />
+          :
+          <div>Loading data...</div>
+        }
       </div>
     );
   }
@@ -24,6 +38,7 @@ class Init extends Component {
 
 const mapStateToProps = state => ({
   currencies: state.fetchCurrencies.currencies,
+  favoriteCurrencies: state.manageCurrencies.currencies,
 });
 
 const mapDispatchToProps = dispatch => ({
