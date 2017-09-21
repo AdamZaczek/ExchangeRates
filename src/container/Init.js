@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ListCurrencies from './ListCurrencies';
 import FavoriteCurrencies from './FavoriteCurrencies';
 import { fetchCurrencies } from '../actions/fetchCurrencies';
+import { removeAllCurrencies } from '../actions/manageCurrencies';
 
 const Button = props => (
   <button onClick={props.onClick}>{props.children}</button>
@@ -14,7 +15,6 @@ class Init extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         {
@@ -22,12 +22,15 @@ class Init extends Component {
           <div>
             <h2>So Far You have chosen:</h2>
             <FavoriteCurrencies currencies={this.props.currencies} />
-            <h2>Remaining currencies:</h2>
+            <Button onClick={this.props.removeAllCurrencies}>Remove all</Button>
           </div>
         }
         {
           this.props.currencies.length ?
-          <ListCurrencies currencies={this.props.currencies} />
+          <div>
+            <h2>All currencies:</h2>
+            <ListCurrencies currencies={this.props.currencies} />
+          </div>
           :
           <div>Loading data...</div>
         }
@@ -43,6 +46,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchCurrencies: url => dispatch(fetchCurrencies(url)),
+  removeAllCurrencies: () => dispatch(removeAllCurrencies()),
 });
 
 export default connect(

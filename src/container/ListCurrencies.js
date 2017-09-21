@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Currencies from '../presentational/Currencies';
-import { addCurrency} from '../actions/manageCurrencies';
+import { addCurrency } from '../actions/manageCurrencies';
 
 class ListCurrencies extends Component {
   addCurrency = currency => this.props.addCurrency(currency);
@@ -10,7 +10,8 @@ class ListCurrencies extends Component {
     return (
       <Currencies
         currencies={this.props.currencies}
-        addCurrency={this.addCurrency}
+        onClick={this.addCurrency}
+        buttonText={'Add Currency'}
       />
     );
   }

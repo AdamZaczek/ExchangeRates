@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Currencies from '../presentational/Currencies';
-import { addCurrency, removeCurrency } from '../actions/manageCurrencies';
+import { removeCurrency } from '../actions/manageCurrencies';
 
 class FavoriteCurrencies extends Component {
-  addCurrency = currency => this.props.addCurrency(currency);
+  removeCurrency = currency => this.props.removeCurrency(currency);
 
   render() {
     return (
       <Currencies
         currencies={this.props.currencies}
-        removeCurrency={this.addCurrency}
+        onClick={this.removeCurrency}
+        buttonText={'Remove Currency'}
       />
     );
   }

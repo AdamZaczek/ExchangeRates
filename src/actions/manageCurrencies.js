@@ -10,6 +10,6 @@ export const removeCurrency = currency => ({
   currency,
 });
 
-export const removeAllCurrencies = currencies => ({
+export const removeAllCurrencies = () => ({
   type: REMOVE_CURRENCIES,
 });

@@ -2,13 +2,13 @@ import React from 'react';
 import Currency from './Currency'
 
 const Currencies = props => {
-  console.log(props)
   const mapCurrencies = props.currencies.map(currency => {
     return (
       <Currency
-        addCurrency={props.addCurrency}
         key={currency.code}
         currency={currency}
+        onClick={props.onClick}
+        buttonText={props.buttonText}
       />
     );
   });
