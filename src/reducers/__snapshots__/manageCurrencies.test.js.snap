@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`manageCurrencies reducer should return array without filtered element 1`] = `
+Object {
+  "currencies": Array [
+    Object {
+      "code": "2",
+      "currency": "euro",
+    },
+    Object {
+      "code": "3",
+      "currency": "frank",
+    },
+  ],
+}
+`;
+
+exports[`manageCurrencies reducer should return default state 1`] = `
+Object {
+  "currencies": Array [],
+}
+`;
