@@ -1,6 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`manageCurrencies reducer should return array without filtered element 1`] = `
+exports[`manageCurrencies reducer should return an array with additional element 1`] = `
+Object {
+  "currencies": Array [
+    Object {
+      "code": "1",
+      "currency": "dollar",
+    },
+    Object {
+      "code": "2",
+      "currency": "euro",
+    },
+    Object {
+      "code": "3",
+      "currency": "frank",
+    },
+  ],
+}
+`;
+
+exports[`manageCurrencies reducer should return an array without filtered element 1`] = `
 Object {
   "currencies": Array [
     Object {
@@ -15,8 +34,33 @@ Object {
 }
 `;
 
+exports[`manageCurrencies reducer should return an empty array after deleting all elements 1`] = `
+Object {
+  "currencies": Array [],
+}
+`;
+
 exports[`manageCurrencies reducer should return default state 1`] = `
 Object {
   "currencies": Array [],
+}
+`;
+
+exports[`manageCurrencies reducer should return the sane array when trying to add the same currency again 1`] = `
+Object {
+  "currencies": Array [
+    Object {
+      "code": "1",
+      "currency": "dollar",
+    },
+    Object {
+      "code": "2",
+      "currency": "euro",
+    },
+    Object {
+      "code": "3",
+      "currency": "frank",
+    },
+  ],
 }
 `;

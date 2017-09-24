@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchCurrencies reducer should return an array with currencies 1`] = `
+Object {
+  "currencies": Array [
+    Object {
+      "code": "1",
+      "currency": "dollar",
+    },
+    Object {
+      "code": "2",
+      "currency": "euro",
+    },
+    Object {
+      "code": "3",
+      "currency": "frank",
+    },
+  ],
+}
+`;
+
+exports[`fetchCurrencies reducer should return default state 1`] = `
+Object {
+  "currencies": Array [],
+}
+`;
