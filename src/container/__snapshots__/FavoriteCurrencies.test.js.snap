@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <th>
+        Currency
+      </th>
+      <th>
+        Ask
+      </th>
+      <th>
+        Bid
+      </th>
+      <th>
+        Code
+      </th>
+    </tr>
+  </tbody>
+</table>
+`;

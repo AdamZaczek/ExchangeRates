@@ -4,10 +4,7 @@ import ListCurrencies from './ListCurrencies';
 import FavoriteCurrencies from './FavoriteCurrencies';
 import { fetchCurrencies } from '../actions/fetchCurrencies';
 import { removeAllCurrencies } from '../actions/manageCurrencies';
-
-const Button = props => (
-  <button onClick={props.onClick}>{props.children}</button>
-);
+import Button from '../presentational/Button';
 
 class Init extends Component {
   componentDidMount() {
@@ -15,21 +12,22 @@ class Init extends Component {
   }
 
   render() {
+    const { favoriteCurrencies, currencies, removeAllCurrencies } = this.props;
     return (
       <div>
         {
-          this.props.favoriteCurrencies.length > 0 &&
+          favoriteCurrencies.length > 0 &&
           <div>
             <h2>So Far You have chosen:</h2>
-            <FavoriteCurrencies currencies={this.props.currencies} />
-            <Button onClick={this.props.removeAllCurrencies}>Remove all</Button>
+            <FavoriteCurrencies currencies={currencies} />
+            <Button onClick={removeAllCurrencies}>Remove all</Button>
           </div>
         }
         {
-          this.props.currencies.length ?
+          currencies.length ?
           <div>
             <h2>All currencies:</h2>
-            <ListCurrencies currencies={this.props.currencies} />
+            <ListCurrencies currencies={currencies} />
           </div>
           :
           <div>Loading data...</div>

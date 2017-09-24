@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with props 1`] = `
+<button
+  onClick={[Function]}
+>
+  ClickMe
+</button>
+`;
+
+exports[`renders correctly without any props 1`] = `
+<button
+  onClick={undefined}
+>
+  ClickMe
+</button>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<tr>
+  <td>
+    dolar australijski
+  </td>
+  <td>
+    2.8717
+  </td>
+  <td>
+    2.8149
+  </td>
+  <td>
+    AUD
+  </td>
+  <td>
+    <button
+      onClick={[Function]}
+    />
+  </td>
+</tr>
+`;
