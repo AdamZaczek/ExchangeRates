@@ -17,6 +17,48 @@ exports[`renders correctly 1`] = `
         Code
       </th>
     </tr>
+    <tr>
+      <td>
+        dolar australijski
+      </td>
+      <td>
+        2.8717
+      </td>
+      <td>
+        2.8149
+      </td>
+      <td>
+        AUD
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          Remove Currency
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        frank szwajcarski
+      </td>
+      <td>
+        3.7269
+      </td>
+      <td>
+        3.6531
+      </td>
+      <td>
+        CHF
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          Remove Currency
+        </button>
+      </td>
+    </tr>
   </tbody>
 </table>
 `;
